@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="tg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TJ Shop Garena – Хариди Алмаз ва Ваучер</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #202124;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1, h2, h3 {
+            color: #1a73e8;
+        }
+        .card {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(60,64,67,0.15);
+            margin-bottom: 20px;
+        }
+        .btn {
+            background-color: #1a73e8;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #155ab6;
+        }
+        .hidden {
+            display: none;
+        }
+        input[type="text"] {
+            border: 1px solid #dadce0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>TJ Shop Garena – Хариди Алмаз ва Ваучер барои Free Fire</h1>
+
+    <div class="card">
+        <h2>Алмазҳо</h2>
+        <button class="btn" onclick="selectItem('100 алмаз – 10 сомон')">100 алмаз – 10 сомон</button><br><br>
+        <button class="btn" onclick="selectItem('300 алмаз – 25 сомон')">300 алмаз – 25 сомон</button><br><br>
+        <button class="btn" onclick="selectItem('500 алмаз – 40 сомон')">500 алмаз – 40 сомон</button>
+    </div>
+
+    <div class="card">
+        <h2>Ваучерҳо</h2>
+        <button class="btn" onclick="selectItem('Ваучери 1-ҳафтаина – 16 сомон')">Ваучери 1-ҳафтаина – 16 сомон</button><br><br>
+        <button class="btn" onclick="selectItem('Ваучери 1-моҳа – 112 сомон')">Ваучери 1-моҳа – 112 сомон</button>
+    </div>
+
+    <div id="step2" class="card hidden">
+        <h3>Шумо интихоб кардед:</h3>
+        <p id="selectedItem"></p>
+        <label for="ffid">ID-и акаунти Free Fire-ро ворид кунед:</label><br>
+        <input type="text" id="ffid" placeholder="Мисол: 123456789" style="width:100%; padding:10px; margin-top:5px;"><br><br>
+        <button class="btn" onclick="showPayment()">Пул супоридан</button>
+    </div>
+
+    <div id="paymentInfo" class="card hidden">
+        <h3>Маълумот барои пардохт</h3>
+        <p>Пулро ба ин номер парто:</p>
+        <strong style="color: #1a73e8; font-size: 18px;">919058489 (Душанбе Сити)</strong><br>
+        <p>Номи соҳиби корт: <strong>Самиев К.З</strong></p>
+        <p>Ҳангоми пардохт ID-и худро дар қисми <strong>комментарий</strong> нависед!</p>
+        <p>Алмази шумо дар давоми 48 соат расонида мешавад.</p>
+    </div>
+
+    <script>
+        function selectItem(item) {
+            document.getElementById('selectedItem').innerText = item;
+            document.getElementById('step2').classList.remove('hidden');
+            document.getElementById('paymentInfo').classList.add('hidden');
+        }
+
+        function showPayment() {
+            const id = document.getElementById('ffid').value.trim();
+            if (id === '') {
+                alert('Лутфан ID-и Free Fire-ро ворид кунед.');
+                return;
+            }
+            document.getElementById('paymentInfo').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
